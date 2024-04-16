@@ -89,7 +89,6 @@ export const Main = () => {
       title: "今日は鳥を見たよ",
       img: "../img/DSC049942.JPG"
     }
-
   ]
   return (
     <div className="gap-4 grid grid-cols-4 mt-4">
