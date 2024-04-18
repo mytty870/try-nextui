@@ -1,5 +1,6 @@
 import { Card, CardBody, Image } from "@nextui-org/react"
 import { isMap } from "util/types"
+import { CustomButton } from "./CustomButton"
 
 type Item = {
   id: number
@@ -91,9 +92,11 @@ export const Main = () => {
     }
   ]
   return (
-    <div className="gap-4 grid grid-cols-4 mt-4">
+  <div className="flex justify-center mt-8">
+    <CustomButton>ぼたん</CustomButton>
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
       {items.map((item: Item) => (
-        <Card key={item.id}>
+        <Card key={item.id} className="max-w-[100px]">
           <CardBody>
             <Image
               src={item.img}
@@ -105,6 +108,7 @@ export const Main = () => {
           </CardBody>
         </Card>
       ))}
+    </div>
     </div>
   )
 }
