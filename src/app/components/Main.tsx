@@ -93,7 +93,7 @@ export const Main = () => {
   ]
   return (
   <div className="flex justify-center mt-8">
-    <CustomButton>ぼたん</CustomButton>
+    <CustomButton>ぼたんだよ</CustomButton>
     <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
       {items.map((item: Item) => (
         <Card key={item.id} className="max-w-[100px]">
