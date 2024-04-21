@@ -1,111 +1,34 @@
-import { Card, CardBody, Image } from "@nextui-org/react"
-import { isMap } from "util/types"
-import { CustomButton } from "./CustomButton"
+import { Card, CardBody, CardFooter, Image } from "@nextui-org/react"
 
 type Item = {
-  id: number
   title: string
+  name: string
   img: string
 }
 
 export const Main = () => {
-  const items = [
-    {
-      id: 1,
-      title: "今日は鳥を見たよ",
-      img: "img/DSC049942.JPG"
-    },
-    {
-      id: 2,
-      title: "今日は鳥を見たよ",
-      img: "img/DSC049942.JPG"
-    },
-    {
-      id: 3,
-      title: "今日は鳥を見たよ",
-      img: "img/DSC049942.JPG"
-    },
-    {
-      id: 4,
-      title: "今日は鳥を見たよ",
-      img: "img/DSC049942.JPG"
-    },
-    {
-      id: 5,
-      title: "今日は鳥を見たよ",
-      img: "img/DSC049942.JPG"
-    },
-    {
-      id: 6,
-      title: "今日は鳥を見たよ",
-      img: "img/DSC049942.JPG"
-    },
-    {
-      id: 7,
-      title: "今日は鳥を見たよ",
-      img: "img/DSC049942.JPG"
-    },
-    {
-      id: 8,
-      title: "今日は鳥を見たよ",
-      img: "img/DSC049942.JPG"
-    },
-    {
-      id: 9,
-      title: "今日は鳥を見たよ",
-      img: "img/DSC049942.JPG"
-    },
-    {
-      id: 10,
-      title: "今日は鳥を見たよ",
-      img: "img/DSC049942.JPG"
-    },
-    {
-      id: 11,
-      title: "今日は鳥を見たよ",
-      img: "img/DSC049942.JPG"
-    },
-    {
-      id: 12,
-      title: "今日は鳥を見たよ",
-      img: "img/DSC049942.JPG"
-    },
-    {
-      id: 13,
-      title: "今日は鳥を見たよ",
-      img: "img/DSC049942.JPG"
-    },
-    {
-      id: 14,
-      title: "今日は鳥を見たよ",
-      img: "img/DSC049942.JPG"
-    },
-    {
-      id: 15,
-      title: "今日は鳥を見たよ",
-      img: "img/DSC049942.JPG"
-    },
-    {
-      id: 16,
-      title: "今日は鳥を見たよ",
-      img: "../img/DSC049942.JPG"
-    }
-  ]
+  const items = Array(10).fill({
+    title: "カワセミ",
+    name: "kawasemi",
+    img: "/kawasemi.jpg"
+  });
+
   return (
   <div className="flex justify-center mt-8">
-    <CustomButton>ぼたんだよ</CustomButton>
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-      {items.map((item: Item) => (
-        <Card key={item.id} className="max-w-[100px]">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {items.map((item: Item, index) => (
+        <Card key={index}>
           <CardBody>
             <Image
               src={item.img}
-              alt={item.title}
-              width="100%"
-              height="100%"
-              className="h-[140px]"
+              alt={item.name}
+              height={200}
+              width={200}
             />
           </CardBody>
+          <CardFooter className="font-bold">
+            <p>{item.title}</p>
+          </CardFooter>
         </Card>
       ))}
     </div>

@@ -19,6 +19,12 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [nextui({
+    layout: {
+      radius: {
+        small: "16px"
+      }
+    }
+  })],
 };
 export default config;
